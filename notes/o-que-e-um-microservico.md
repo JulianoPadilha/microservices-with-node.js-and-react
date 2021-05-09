@@ -4,7 +4,7 @@ Antes de entender o que é um Microserviço, precisamos dar um passo atrás e en
 
 Aplicações Monolíticas contém toda a implementação das features de uma app, compartilhando a mesma estrutura, infraestrutura e base de código. 
 
-![](../images/monolítico.png)
+![](../images/monolitico.png)
 
 Já aplicações baseadas em Microserviços visam justamente quebrar as features de uma aplicação para que cada uma delas seja um novo serviço/app. 
 
@@ -14,7 +14,7 @@ Desas forma, nossa aplicação não fica acoplada em apenas uma estrutura, infra
 
 Em resumo, podemos dizer que um Monolítico...
 
-![](../images/resumo_monolítico.png)
+![](../images/resumo_monolitico.png)
 
 
 Enquanto que um Microserviço...
