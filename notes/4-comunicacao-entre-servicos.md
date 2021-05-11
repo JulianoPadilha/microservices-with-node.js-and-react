@@ -18,3 +18,14 @@ Este tipo de comunicação é a mais fácil de entender. Trata-se de requisiçõ
 #### Observações sobre a comunicação síncrona
 
 ![](../images/detalhes_comunicacao_sincrona.png)
+
+
+### Comunicação assíncrona | Event Bus
+
+Não trata-se da melhor estratégia e geralmente é pouco utilizada pois compartilhamos dos mesmos pontos negativos da comunicação síncrona.
+
+A comunicação assíncrona utilizando eventos trabalha com a transmissão de eventos disparados por serviços e que entrar no "Event Bus", que direciona as informações para os serviços que devem saber lidar com o evento. Então esses serviços respondem o evento e devolvem para o seu emissor original.
+
+Existe um forma bem mais atrativa de trabalhar com comunicação assíncrona entre serviços e a veremos a seguir.
+
+![](../images/comunicacao_async_event_bus.png)
