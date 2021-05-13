@@ -29,3 +29,18 @@ A comunicação assíncrona utilizando eventos trabalha com a transmissão de ev
 Existe um forma bem mais atrativa de trabalhar com comunicação assíncrona entre serviços e a veremos a seguir.
 
 ![](../images/comunicacao_async_event_bus.png)
+
+### Comunicação assíncrona | Event Bus + Database-Per-Service
+
+Essa estratégia pode parecer a mais confusa e bizarra de todas, pois envolve comunicação baseada em eventos e um base de dados única para o serviço em questão. Vamos entender melhor com o exemplo da imagem abaixo.
+
+![](../images/comunicacao_async_event_database.png)
+
+__O que está acontecendo aí?__
+
+1) Temos uma requisicão chegando em no serviço de criação de orders
+2) Uma nova order é criada e salva no banco de dados de Orders do serviço C
+3) Ao mesmo tempo, um evento é emitido com essa informação/dados
+4) E o serviço D, o interessado na informação, recebe esse evento
+5) Após receber esse evento, o serviço D salva em seu banco de dados 
+6) Com isso, agora o serviço D tem tudo que precisa para retornar a informação de quais produtos um usuário comprou sem precisar consultar o banco de dados de outros serviço.
