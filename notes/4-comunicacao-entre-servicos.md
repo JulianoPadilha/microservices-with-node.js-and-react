@@ -47,3 +47,5 @@ __O que está acontecendo aí?__
 
 Dessa forma, temos todos os serviços vivendo de forma desacoplada e sem dependências diretas. 
 Caso um dos serviço pare de funcionar, os outros continuarão de pé. 
+
+![](../images/pros_contras_async_event_database.png)
