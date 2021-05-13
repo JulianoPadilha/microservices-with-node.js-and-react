@@ -44,3 +44,6 @@ __O que está acontecendo aí?__
 4) E o serviço D, o interessado na informação, recebe esse evento
 5) Após receber esse evento, o serviço D salva em seu banco de dados 
 6) Com isso, agora o serviço D tem tudo que precisa para retornar a informação de quais produtos um usuário comprou sem precisar consultar o banco de dados de outros serviço.
+
+Dessa forma, temos todos os serviços vivendo de forma desacoplada e sem dependências diretas. 
+Caso um dos serviço pare de funcionar, os outros continuarão de pé. 
