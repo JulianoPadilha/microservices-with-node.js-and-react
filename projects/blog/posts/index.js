@@ -8,18 +8,27 @@ app.use(express.json());
 const posts = {};
 
 app.get('/posts', (req, res) => {
-  res.send(posts);
+  // Verifica se existem posts
+  if (Object.keys(posts).length) {
+    res.send(posts);
+  }
+
+  res.send('Não existem posts cadastrados!');
 });
 
 app.post('/posts', (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
-  posts[id] = {
-    id, title
-  };
+  if (title) {
+    posts[id] = {
+      id, title
+    };
+  
+    res.status(201).send(posts[id]);
+  }
 
-  res.status(201).send(posts[id]);
+  res.status(400).send('Erro ao criar post. É preciso inserir um title.')
 });
 
 app.listen(4000, () => {
