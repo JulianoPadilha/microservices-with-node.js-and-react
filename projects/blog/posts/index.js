@@ -20,15 +20,14 @@ app.post('/posts', (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
-  if (title) {
-    posts[id] = {
-      id, title
-    };
-  
-    res.status(201).send(posts[id]);
+  if (!title) {
+    res.status(400).send('Erro ao criar post. É preciso inserir um title.')
   }
 
-  res.status(400).send('Erro ao criar post. É preciso inserir um title.')
+  posts[id] = {
+    id, title
+  };
+  res.status(201).send(posts[id]);
 });
 
 app.listen(4000, () => {
