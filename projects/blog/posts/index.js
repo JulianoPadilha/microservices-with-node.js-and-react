@@ -10,10 +10,10 @@ const posts = {};
 app.get('/posts', (req, res) => {
   // Verifica se existem posts
   if (Object.keys(posts).length) {
-    res.send(posts);
+    return res.send(posts);
   }
 
-  res.send('Não existem posts cadastrados!');
+  return res.send('Não existem posts cadastrados!');
 });
 
 app.post('/posts', (req, res) => {
@@ -21,13 +21,13 @@ app.post('/posts', (req, res) => {
   const { title } = req.body;
 
   if (!title) {
-    res.status(400).send('Erro ao criar post. É preciso inserir um title.')
+    return res.status(400).send('Erro ao criar post. É preciso inserir um title.')
   }
 
   posts[id] = {
     id, title
   };
-  res.status(201).send(posts[id]);
+  return res.status(201).send(posts[id]);
 });
 
 app.listen(4000, () => {
