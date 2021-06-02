@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CommentCreate from './CommentCreate';
 
 const PostsList = () => {
   // O valor default do useState é um objeto vazio pois
@@ -13,7 +14,7 @@ const PostsList = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, [posts]);
+  }, []);
 
   const renderedPosts = Object.values(posts).map(post => {
     return (
@@ -24,6 +25,7 @@ const PostsList = () => {
       >
         <div className="card-body">
           <h3>{post.title}</h3>
+          <CommentCreate postId={post.id} />
         </div>
       </div>
     )
