@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CommentCreate from './CommentCreate';
+import CommentsList from './CommentsList';
 
 const PostsList = () => {
   // O valor default do useState é um objeto vazio pois
@@ -25,6 +26,7 @@ const PostsList = () => {
       >
         <div className="card-body">
           <h3>{post.title}</h3>
+          <CommentsList postId={post.id} />
           <CommentCreate postId={post.id} />
         </div>
       </div>
